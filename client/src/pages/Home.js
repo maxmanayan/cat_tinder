@@ -8,12 +8,12 @@ import Loader from '../components/Loader';
 const Home = () => {
   const [testData, setTestData] = useState(null)
   const [loading, setLoading] = useState(true)
+  const {user} = useContext(AuthContext)
 
-  const {user, x, someFunc} = useContext(AuthContext)
+  // const {user} = useContext(AuthContext)
 
   useEffect(()=>{
     getData()
-    someFunc()
   },[])
 
   const getData = async () => {
@@ -28,12 +28,10 @@ const Home = () => {
   }
 
   if(loading) return <Loader type='ring' text='loading' />
+  if(!user) return <p>Need to Login/Register</p>
   return(
     <div>
-      <h1>Home</h1>
-      <p>{user.name}</p>
-      <p>{user.age}</p>
-      <p>{x}</p>
+      <h1>Welcome Home {user.email}</h1>
       {testData && testData}
     </div>
   )
