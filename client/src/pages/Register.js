@@ -5,9 +5,9 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const Register = () => {
   const {handleRegister} = useContext(AuthContext)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [passwordConfirmation, setPasswordConfirmation] = useState('')
+  const [email, setEmail] = useState('testguy@test.com')
+  const [password, setPassword] = useState('123456')
+  const [passwordConfirmation, setPasswordConfirmation] = useState('123456')
   const history = useHistory()
 
   const handleSubmit = (e) => {

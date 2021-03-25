@@ -33,6 +33,7 @@ class AuthProvider extends React.Component {
 
   handleLogout = (history) => {
     axios.delete('/api/auth/sign_out').then(res=>{
+      this.setState({user: null})
       history.push('/login')
     }).catch((err)=>{
       console.log(err.response.data)
@@ -45,7 +46,9 @@ class AuthProvider extends React.Component {
       ...this.state, 
       handleRegister: this.handleRegister, 
       handleLogout: this.handleLogout,
-      handleLogin: this.handleLogin
+      handleLogin: this.handleLogin,
+      authenticated: this.state.user !== null,
+      setUser: (user) => this.setState({ user, }),
       }}>
       {this.props.children}
     </AuthContext.Provider>

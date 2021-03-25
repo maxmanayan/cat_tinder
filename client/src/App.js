@@ -9,20 +9,24 @@ import Footer from './components/Footer';
 import Register from './pages/Register';
 import NavBar from "./components/NavBar";
 import Login from './pages/Login';
+import FetchUser from './components/FetchUser';
+
 
 function App() {
   return (
     <>
       <NavBar />
-      <Container>
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/register' component={Register} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/componentDemo' component={ComponentDemo} />
-        </Switch>
-      </Container>
+      <FetchUser>
+        <Container>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/register' component={Register} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/componentDemo' component={ComponentDemo} />
+          </Switch>
+        </Container>
+      </FetchUser>
     </>
   );
 }
