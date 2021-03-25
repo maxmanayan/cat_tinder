@@ -10,6 +10,7 @@ import Register from './pages/Register';
 import NavBar from "./components/NavBar";
 import Login from './pages/Login';
 import FetchUser from './components/FetchUser';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       <FetchUser>
         <Container>
           <Switch>
-            <Route exact path='/' component={Home} />
+            <ProtectedRoute exact path='/' component={Home} />
             <Route exact path='/about' component={About} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
