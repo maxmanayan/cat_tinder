@@ -9,7 +9,7 @@ export const AuthConsumer = AuthContext.Consumer
 
 class AuthProvider extends React.Component {
 
-  state = { user: null }
+  state = { user: null, registerError: null }
 
   // .then.catch syntax
   handleRegister = (user, history) => {
@@ -18,6 +18,7 @@ class AuthProvider extends React.Component {
       history.push('/')
     }).catch(err=>{
       console.log(err)
+      this.setState({registerError: err.response ? err.response.data : err})
     })
   }
 

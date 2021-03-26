@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Header } from 'semantic-ui-react';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
@@ -16,6 +16,7 @@ const Login = () => {
   }
   return(
     <Form onSubmit={handleSubmit}>
+       <Header as='h1' textAlign='center'>Login</Header>
       <Form.Input 
         autoFocus
         required

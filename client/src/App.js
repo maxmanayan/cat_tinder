@@ -11,6 +11,8 @@ import NavBar from "./components/NavBar";
 import Login from './pages/Login';
 import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
+import MyCats from './pages/MyCats';
+import RegisterUX from './pages/RegisterUX';
 
 
 function App() {
@@ -21,8 +23,9 @@ function App() {
         <Container>
           <Switch>
             <ProtectedRoute exact path='/' component={Home} />
+            <ProtectedRoute exact path='/my_cats' component={MyCats} />
             <Route exact path='/about' component={About} />
-            <Route exact path='/register' component={Register} />
+            <Route exact path='/register' component={RegisterUX} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/componentDemo' component={ComponentDemo} />
           </Switch>
